@@ -6,14 +6,14 @@
 #    By: donghwi2 <donghwi2@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2025/01/20 15:58:21 by donghwi2          #+#    #+#              #
-#    Updated: 2025/01/20 16:05:09 by donghwi2         ###   ########.fr        #
+#    Updated: 2025/02/04 14:05:14 by donghwi2         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-NAME	=	megaphone
+NAME	=	PhoneBook
 FLAGS	=	-Wall -Wextra -Werror -std=c++98
 CXX		=	c++
-SRC		=	megaphone.cpp
+SRC		=	main.cpp Contact.cpp PhoneBook.cpp
 OBJ		=	$(SRC:.cpp=.o)
 
 all		:	$(NAME)

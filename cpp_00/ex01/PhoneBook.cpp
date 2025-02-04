@@ -6,25 +6,64 @@
 /*   By: donghwi2 <donghwi2@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/20 23:35:42 by donghwi2          #+#    #+#             */
-/*   Updated: 2025/01/25 18:40:26 by donghwi2         ###   ########.fr       */
+/*   Updated: 2025/02/04 14:45:18 by donghwi2         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "PhoneBook.hpp"
 
-PhoneBook::PhoneBook() : currentIdx(0), contactCnt(0); // 초기화 기법중 -> 초기화 리스트
+PhoneBook::PhoneBook()
+	: currentIdx(0), contactCnt(0) {
+}
 
-PhoneBook::~PhoneBook() {} // 관용적, 명시적으로 소멸자도 만들어줌
+PhoneBook::~PhoneBook(){
+	std::cout << "End\n";
+}
 
-void	PhoneBook::AddContact(Contact newContact)
-{
+void	PhoneBook::GetFullContacts(){
+	for (int i = 0; i < contactCnt; i++){
+		
+	}
+}
+
+void	PhoneBook::AddContact(Contact newContact){
 	contacts[currentIdx] = newContact;
-	currentIdx = (currentIdx + 1) % 8;
+	currentIdx++;
 	if (contactCnt < 8)
 		contactCnt++;
+	if (currentIdx == 8)
+		currentIdx = 0;
+}
+
+void	PhoneBook::CheckCommand(std::string command){
+	std::string	tempFN, tempLN, tempNN, tempPN, tempDS;
+
+	if (command == "ADD"){
+		std::cout << "First Name :";
+		std::cin >> tempFN;
+		std::cout << "Last Name :";
+		std::cin >> tempLN;
+
+		Contact	newContact(tempFN, tempLN);
+		AddContact(newContact);
+	}
+	else if (command == "SEARCH"){
+		GetFullContacts();
+	}
 }
 
 
+// PhoneBook::PhoneBook() : currentIdx(0), contactCnt(0); // 초기화 기법중 -> 초기화 리스트
+
+// PhoneBook::~PhoneBook() {} // 관용적, 명시적으로 소멸자도 만들어줌
+
+// void	PhoneBook::AddContact(Contact newContact)
+// {
+// 	contacts[currentIdx] = newContact;
+// 	currentIdx = (currentIdx + 1) % 8;
+// 	if (contactCnt < 8)
+// 		contactCnt++;
+// }
 
 
 /*
