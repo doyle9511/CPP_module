@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   PhoneBook.hpp                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: donghwi2 <donghwi2@student.42.fr>          +#+  +:+       +#+        */
+/*   By: donghwi2 <donghwi2@student.42gyeongsan.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/20 23:35:39 by donghwi2          #+#    #+#             */
-/*   Updated: 2025/02/04 14:42:37 by donghwi2         ###   ########.fr       */
+/*   Updated: 2025/02/04 17:49:56 by donghwi2         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,7 +25,7 @@ class PhoneBook{
 		~PhoneBook();
 		void	CheckCommand(std::string command);
 		void	AddContact(Contact newContact);
-		void	GetFullContacts()
+		void	DisplayFullContacts();
 };
 
 // class PhoneBook

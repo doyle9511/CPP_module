@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   PhoneBook.cpp                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: donghwi2 <donghwi2@student.42.fr>          +#+  +:+       +#+        */
+/*   By: donghwi2 <donghwi2@student.42gyeongsan.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/20 23:35:42 by donghwi2          #+#    #+#             */
-/*   Updated: 2025/02/04 14:45:18 by donghwi2         ###   ########.fr       */
+/*   Updated: 2025/02/06 15:54:17 by donghwi2         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,9 +20,12 @@ PhoneBook::~PhoneBook(){
 	std::cout << "End\n";
 }
 
-void	PhoneBook::GetFullContacts(){
+void	PhoneBook::DisplayFullContacts(){
+	std::cout << "     index|first name| last name| nick name\n";
 	for (int i = 0; i < contactCnt; i++){
-		
+		std::cout << std::setw(10) << i << "|";
+		std::cout << std::setw(10) << contacts[i].GetFirstName() << "|";
+		std::cout << std::setw(10) << contacts[i].GetLastName() << std::endl;
 	}
 }
 
@@ -48,7 +51,7 @@ void	PhoneBook::CheckCommand(std::string command){
 		AddContact(newContact);
 	}
 	else if (command == "SEARCH"){
-		GetFullContacts();
+		DisplayFullContacts();
 	}
 }
 
