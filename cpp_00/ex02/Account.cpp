@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   Account.cpp                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: donghwi2 <donghwi2@student.42.fr>          +#+  +:+       +#+        */
+/*   By: donghwi2 <donghwi2@student.42gyeongsan.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/08 20:28:03 by donghwi2          #+#    #+#             */
-/*   Updated: 2025/02/13 22:04:01 by donghwi2         ###   ########.fr       */
+/*   Updated: 2025/02/19 14:50:31 by donghwi2         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,8 +14,6 @@
 #include <iomanip>
 #include <ctime>
 #include "Account.hpp"
-
-#define DATE "[19920104_091532] "
 
 //c++에서 static 맴버변수는 무조건 class외부에서 한 번만 정의되어야 함.
 //static 변수는 프로그램 시작시 무조건 단 한 번만 초기화 되어야 함.
@@ -68,10 +66,12 @@ int		Account::getNbWithdrawals( void ){
 }
 
 void	Account::displayAccountsInfos( void ){
-	std::cout << DATE << "accounts:" << getNbAccounts() << ";total:"\
-		<< getTotalAmount() << ";deposits:" << getNbDeposits()\
-		<< ";withdrawals:" << getNbWithdrawals()\
-		<< std::endl;
+	_displayTimestamp();
+	std::cout << "accounts:" 	<< getNbAccounts()\
+			<< ";total:"	 	<< getTotalAmount()\
+			<< ";deposits:" 	<< getNbDeposits()\
+			<< ";withdrawals:" 	<< getNbWithdrawals()\
+			<< std::endl;
 }
 
 void	Account::makeDeposit( int deposit ){
@@ -119,10 +119,18 @@ bool Account::makeWithdrawal(int withdrawal) {
 }
 
 int		Account::checkAmount( void ) const{
-	
+	return this->_amount;	
 }
 
 void	Account::displayStatus( void ) const{
+	_displayTimestamp();
+	std::cout << "index:" << this->_accountIndex << ";";
+	std::cout << "amount:" << this->_amount << ";";
+	std::cout << "deposits:" << this->_nbDeposits << ";";
+	std::cout << "withdrawals:" << this->_nbWithdrawals << std::endl;
+}
+
+static void	_displayTimestamp( void ){
 	
 }
 
@@ -214,18 +222,18 @@ void	Account::_displayTimestamp( void ){
 // }
 
 // 잔액 확인
-int Account::checkAmount(void) const {
-    return this->_amount;
-}
+// int Account::checkAmount(void) const {
+//     return this->_amount;
+// }
 
-// 계좌 상태 표시
-void Account::displayStatus(void) const {
-    _displayTimestamp();
-    std::cout << "index:" << this->_accountIndex << ";";
-    std::cout << "amount:" << this->_amount << ";";
-    std::cout << "deposits:" << this->_nbDeposits << ";";
-    std::cout << "withdrawals:" << this->_nbWithdrawals << std::endl;
-}
+// // 계좌 상태 표시
+// void Account::displayStatus(void) const {
+//     _displayTimestamp();
+//     std::cout << "index:" << this->_accountIndex << ";";
+//     std::cout << "amount:" << this->_amount << ";";
+//     std::cout << "deposits:" << this->_nbDeposits << ";";
+//     std::cout << "withdrawals:" << this->_nbWithdrawals << std::endl;
+// }
 
 // // static 멤버 함수들
 // int Account::getNbAccounts(void) {
@@ -250,7 +258,7 @@ void Account::displayStatus(void) const {
 //     std::cout << "total:" << getTotalAmount() << ";";
 //     std::cout << "deposits:" << getNbDeposits() << ";";
 //     std::cout << "withdrawals:" << getNbWithdrawals() << std::endl;
-}
+// }
 
 	//이 구현은 다음과 같은 특징을 가집니다:
 
