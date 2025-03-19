@@ -6,7 +6,7 @@
 /*   By: donghwi2 <donghwi2@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/10 18:22:47 by donghwi2          #+#    #+#             */
-/*   Updated: 2025/03/11 17:23:58 by donghwi2         ###   ########.fr       */
+/*   Updated: 2025/03/19 15:34:54 by donghwi2         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,8 +22,8 @@ class Fixed{
 		
 	public:
 		Fixed();
-		Fixed(const Fixed& src);
-		Fixed& operator=(const Fixed& other);
+		Fixed(const Fixed &src);
+		Fixed &operator=(const Fixed &other);
 		~Fixed();
 		
 		int		getRawBits( void ) const;
