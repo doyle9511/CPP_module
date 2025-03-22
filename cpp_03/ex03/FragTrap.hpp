@@ -6,7 +6,7 @@
 /*   By: donghwi2 <donghwi2@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/22 18:53:50 by donghwi2          #+#    #+#             */
-/*   Updated: 2025/03/22 18:55:01 by donghwi2         ###   ########.fr       */
+/*   Updated: 2025/03/22 19:14:38 by donghwi2         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,7 @@
 
 #include "ClapTrap.hpp"
 
-class	FragTrap : public ClapTrap {
+class	FragTrap : virtual public ClapTrap {
 	public:
 		FragTrap(void);
 		FragTrap(const std::string &name);
