@@ -6,15 +6,15 @@
 #    By: donghwi2 <donghwi2@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2025/02/17 14:04:18 by donghwi2          #+#    #+#              #
-#    Updated: 2025/03/24 14:23:46 by donghwi2         ###   ########.fr        #
+#    Updated: 2025/03/25 18:40:31 by donghwi2         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-NAME	=	ClapTrap
-FLAGS	=	-Wall -Wextra -Werror -Wshadow=local -std=c++98
+NAME	=	Polymorphism
+FLAGS	=	-Wall -Wextra -Werror -std=c++98
 CXX		=	c++			# vscode용
 #CXX	=	clang++ 	# vim용
-SRCS	=	main.cpp ClapTrap.cpp ScavTrap.cpp FragTrap.cpp DiamondTrap.cpp
+SRCS	=	main.cpp Animal.cpp Cat.cpp Dog.cpp WrongAnimal.cpp WrongCat.cpp
 OBJS	=	$(SRCS:.cpp=.o)
 
 all		:	$(NAME)
